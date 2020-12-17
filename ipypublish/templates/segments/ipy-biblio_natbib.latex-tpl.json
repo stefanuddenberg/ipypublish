@@ -9,7 +9,7 @@
       "((*- if nb.metadata.ipub and nb.metadata.ipub.biboptions: *))",
       "\\usepackage[(((nb.metadata.ipub.biboptions | dict_to_kwds)))]{natbib}",
       "((*- else *))",
-      "\\usepackage[numbers, square, super, sort&compress]{natbib}",
+      "\\usepackage[natbibapa, nodoi]{apacite}",
       "((*- endif *))",
       "% hyperlink doi's",
       "\\usepackage{doi}"
@@ -23,7 +23,8 @@
       "\\bibliographystyle{((( nb.metadata.ipub.bibstyle )))}",
       "((*- else *))",
       "% sort citations by order of first appearance",
-      "\\bibliographystyle{unsrtnat}",
+      "\\bibliographystyle{apacite}",
+      "\\setlength\\bibsep{\\baselineskip} % increase space between refs",
       "((*- endif *))",
       "\\bibliography{((( filename )))}",
       "",

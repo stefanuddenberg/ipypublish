@@ -5,10 +5,12 @@
   "segments": {
     "document_docclass": [
       "",
-      "\\documentclass[10pt,parskip=half,",
+      "\\documentclass[11pt,parskip=half,",
       "toc=sectionentrywithdots,",
       "bibliography=totocnumbered,",
-      "captions=tableheading,numbers=noendperiod]{scrartcl}",
+      "captions=tableheading,",
+      "numbers=noendperiod,",
+      "headings=standardclasses]{scrartcl}",
       "",
       "((*- if nb.metadata.ipub: *))",
       "((*- if nb.metadata.ipub.language: *))",
@@ -18,14 +20,17 @@
       "\\usepackage[((( nb.metadata.ipub.language )))]{babel}",
       "((*- endif *))",
       "((*- endif *))",
-      ""
+      "",
+      "\\usepackage{setspace}",
+      "\\doublespacing"
     ],
     "document_margins": [
       "",
       " % Used to adjust the document margins",
       "\\usepackage{geometry}",
       "\\geometry{tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,",
-      "nohead,includefoot,footskip=25pt}",
+      "includehead,includefoot,footskip=25pt}",
+      "% use nohead instead of includehead if no head",
       "% you can use showframe option to check the margins visually"
     ],
     "document_packages": [
@@ -43,7 +48,7 @@
       "\\let\\counterwithin\\relax",
       "\\usepackage{chngcntr}",
       "% header/footer",
-      "\\usepackage[footsepline=0.25pt]{scrlayer-scrpage}"
+      "\\usepackage[footsepline=0.25pt, headsepline=0.25pt]{scrlayer-scrpage}"
     ],
     "document_definitions": [
       "",
@@ -51,7 +56,7 @@
       "",
       "% Colors for the hyperref package",
       "\\definecolor{urlcolor}{rgb}{0,.145,.698}",
-      "\\definecolor{linkcolor}{rgb}{.71,0.21,0.01}",
+      "\\definecolor{linkcolor}{rgb}{0.5,0,0}",
       "\\definecolor{citecolor}{rgb}{.12,.54,.11}",
       ""
     ],
@@ -93,9 +98,14 @@
       "\\@addtoreset{figure}{section}",
       "\\@addtoreset{equation}{section}",
       "\\makeatother",
+      "% XXX use for section numbered tables and figures.",
       "\\renewcommand\\thetable{\\thesection.\\arabic{table}}",
       "\\renewcommand\\thefigure{\\thesection.\\arabic{figure}}",
       "\\renewcommand\\theequation{\\thesection.\\arabic{equation}}",
+      "% XXX use for absolute numbered tables and figures",
+      "% \\renewcommand\\thetable{\\arabic{table}}",
+      "% \\renewcommand\\thefigure{\\arabic{figure}}",
+      "% \\renewcommand\\theequation{\\arabic{equation}}",
       "",
       "((*- if nb.metadata.ipub: *))",
       "",
@@ -134,6 +144,10 @@
       "\\ModifyLayer[addvoffset=.6ex]{plain.scrheadings.foot.oneside}",
       "\\pagestyle{scrheadings}",
       "\\clearscrheadfoot{}",
+      "% Running head in header",
+      "((*- if nb.metadata.ipub.titlepage.running_head: *))",
+      "    \\ihead{((( nb.metadata[\"ipub\"][\"titlepage\"][\"running_head\"] )))}",
+      "((*- endif *))",
       "\\ifoot{\\leftmark}",
       "\\renewcommand{\\sectionmark}[1]{\\markleft{\\thesection\\ #1}}",
       "\\ofoot{\\pagemark}",
@@ -142,7 +156,7 @@
     ],
     "document_header_end": [
       "",
-      "% clereref must be loaded after anything that changes the referencing system",
+      "% cleveref must be loaded after anything that changes the referencing system",
       "\\usepackage{cleveref}",
       "\\creflabelformat{equation}{#2#1#3}"
     ]
