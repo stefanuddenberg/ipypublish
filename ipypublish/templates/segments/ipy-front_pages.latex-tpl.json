@@ -74,7 +74,7 @@
       "  ((*- if nb.metadata[\"ipub\"][\"titlepage\"][\"institution\"]: -*))",
       "   \\begin{center}",
       "     ((*- for i in nb.metadata[\"ipub\"][\"titlepage\"][\"institution\"] *))",
-      "       \\LARGE{((( nb.metadata[\"ipub\"][\"titlepage\"][\"institution\"][loop.index-1] )))}\\\\",
+      "       \\large{((( nb.metadata[\"ipub\"][\"titlepage\"][\"institution\"][loop.index-1] )))}\\\\",
       "     ((*- endfor *))",
       "   \\end{center}",
       "   \\vspace{0.2cm}",
