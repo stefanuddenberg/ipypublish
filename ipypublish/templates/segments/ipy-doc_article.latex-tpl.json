@@ -63,7 +63,7 @@
     "document_commands": [
       "",
       "% ensure new section starts on new page",
-      "\\addtokomafont{section}{\\clearpage}",
+      "\\addtokomafont{section}{\\clearpage\\phantomsection}",
       "",
       "% Prevent overflowing lines due to hard-to-break entities",
       "\\sloppy",
