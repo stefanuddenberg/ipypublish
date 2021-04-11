@@ -5,8 +5,8 @@ jinja2
 jsonextended>=0.7
 jsonschema
 jupytext
-nbconvert
-nbformat
+nbconvert==5.6.1
+nbformat==5.0.8
 ordered-set
 pathlib2; python_version < '3.4'
 panflute
