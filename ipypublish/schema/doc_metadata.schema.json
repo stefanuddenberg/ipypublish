@@ -7,6 +7,10 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "abstract": {
+          "description": "The abstract of the document.",
+          "type": "string"
+        },
         "language": {
           "description": "the language can be any specified in the babel package",
           "type": "string",

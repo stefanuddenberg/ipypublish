@@ -57,11 +57,11 @@
       "  \\textbf{((( resources.metadata.name | escape_latex )))}",
       "  ((*- endif *))",
       "",
-      "  \\vspace{0.3cm}",
+      "  \\vspace{0.2cm}",
       "",
       "  ((*- if nb.metadata[\"ipub\"][\"titlepage\"][\"subtitle\"]: -*))",
       "  \\LARGE{((( nb.metadata[\"ipub\"][\"titlepage\"][\"subtitle\"] )))}",
-      "  \\vspace{1.5cm}",
+      "  \\vspace{0.2cm}",
       "  ((*- endif *))",
       "",
       " \\vspace{0.8cm}",
@@ -150,6 +150,18 @@
       "\\setcounter{tocdepth}{((( nb.metadata.ipub.toc.depth )))}",
       "((*- endif *))",
       ""
+    ],
+    "document_abstract": [
+      "",
+      "((*- if nb.metadata[\"ipub\"][\"abstract\"]: -*))",
+      "   % \\begin{abstract}",
+      "    \\section*{Abstract}",
+      "        ((( nb.metadata[\"ipub\"][\"abstract\"] )))",
+      "        \\thispagestyle{empty} % remove header and footer ",
+      "   % \\end{abstract}",
+      "    \\cleardoublepage",
+      "    \\clearpage",
+      "((*- endif *))"
     ],
     "document_predoc": [
       "",
