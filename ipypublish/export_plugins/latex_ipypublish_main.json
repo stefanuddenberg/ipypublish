@@ -19,7 +19,7 @@
     },
     "preprocessors": [
       {
-        "class": "ipypublish.preprocessors.pre_pymarkdown.PyMarkdownPreprocessor",
+        "class": "jupyter_contrib_nbextensions.nbconvert_support.PyMarkdownPreprocessor",
         "args": {}
       },
       {
